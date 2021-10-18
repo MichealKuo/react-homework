@@ -1,16 +1,15 @@
-import React from 'react'
-
+import React, { useState } from 'react'
 // 每個商品的物件
 // {
 //     id: 1,
 //     name: '咖啡色 T-shirt',
-//     catgory: 'Shirt',
+//     category: 'Shirt',
 //     image: 'https://i.imgur.com/1GrakTl.jpg',
 //     price: 300,
 //  }
 
 function ProductItem(props) {
-  const { name, category, image, price, count, setCount } = props
+  const { name, category, image, price, count, setCount, products } = props
 
   return (
     <>
@@ -44,9 +43,8 @@ function ProductItem(props) {
               +
             </a>
           </div>
-          <div className="col">
-            ${price} <span className="close">&#10005;</span>
-          </div>
+          <div className="col">${price}</div>
+          <button onClick={() => {}}>&#10005;</button>
         </div>
       </div>
     </>

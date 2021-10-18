@@ -1,4 +1,4 @@
-#root {
+/* #root {
   background: #ddd;
   min-height: 100vh;
   vertical-align: middle;
@@ -188,4 +188,26 @@ a:hover {
 
 .col-style {
   padding-left: 0;
+} */
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+ul li a{
+  text-decoration: none;
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+/* ul li a:hover{
+  background-color: red;
+  color: #fff;
+} */
+
+.active{
+  background-color: rgb(63, 38, 133);
+  color: #fff;
 }

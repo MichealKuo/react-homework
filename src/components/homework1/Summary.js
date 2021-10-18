@@ -13,11 +13,8 @@ function Summary(props) {
           </h5>
         </div>
         <hr />
-        <div className="row">
-          <div className="col col-style">共 {productCount} 項目</div>
-        </div>
         <section id="selectedOption">
-          <h2>下拉選單</h2>
+          <h5>選擇運費</h5>
           <select
             value={selectedOption}
             onChange={(e) => {
@@ -30,6 +27,10 @@ function Summary(props) {
             <option value="250">快遞 $+250</option>
           </select>
         </section>
+        <div className="row">
+          <div className="col col-style">共 {productCount} 項目</div>
+        </div>
+
         <div className="row row-style">
           <div className="col">總價</div>
           <div className="col text-right">${total + selectedOption * 1}</div>
