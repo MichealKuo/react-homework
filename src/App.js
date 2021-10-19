@@ -1,31 +1,35 @@
-import { useState } from 'react'
-import './menu.css'
+import React, { Component } from 'react'
 
-function App() {
-  // -1代表一開始沒有被按的項目
-  const [activeIndex, setActiveIndex] = useState(-1)
+import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
 
-  const menuItems = ['首頁', '關於我們', '產品']
+class MyDatepickerComponent extends Component {
+  state = {
+    startDate: new Date(),
+  }
 
-  return (
-    <>
-      <ul>
-        {menuItems.map((v, i) => {
-          return (
-            <li
-              key={i}
-              className={i === activeIndex ? 'active' : ''}
-              onClick={() => {
-                setActiveIndex(i)
-              }}
-            >
-              {v}
-            </li>
-          )
-        })}
-      </ul>
-    </>
-  )
+  handleChange = (date) => {
+    this.setState({
+      startDate: date,
+    })
+    if (new Date().getFullYear() - date.getFullYear() > 18) {
+      alert('恭喜成年')
+    } else {
+      alert('小屁孩')
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <DatePicker
+          onChange={this.handleChange}
+          selected={this.state.startDate}
+          dateFormat="MM/dd/yyyy"
+        />
+      </div>
+    )
+  }
 }
 
-export default App
+export default MyDatepickerComponent
