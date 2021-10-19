@@ -20,15 +20,21 @@ function OrderList(props) {
             </div>
           </div>
         </div>
-        {productsInOrder.map((v, i) => {
+        {productsInOrder.map((product, i) => {
           return (
             <ProductItem
-              key={v.id}
-              name={v.name}
-              category={v.category}
-              image={v.image}
-              price={v.price}
-              count={v.count}
+              key={product.id}
+              name={product.name}
+              category={product.category}
+              image={product.image}
+              price={product.price}
+              count={product.count}
+              remove={() => {
+                const newProduct = [...productsInOrder].filter((v, i) => {
+                  return v.id !== product.id
+                })
+                setProductsInOrder(newProduct)
+              }}
               setCount={(newCount) => {
                 //react 是陣列 或是 狀態時候 三步驟處理如下：
                 //1. 先從原本的陣列拷貝出一個新陣列(在這上面處理)

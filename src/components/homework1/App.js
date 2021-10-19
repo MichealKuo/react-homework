@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import OrderList from './OrderList'
+import OrderList from './components/OrderList'
 import Summary from './components/Summary'
 
 // 產品訂購的項目 因為 Product summary 都需要 放在父層App.js
@@ -27,19 +27,6 @@ const products = [
     price: 450,
   },
 ]
-
-// 初始化狀態用的函式 - 用陣列狀態
-// const initState = (products) => {
-//   const state = []
-
-//   for (let i = 0; i < products.length; i++) {
-//     state.push(1)
-//   }
-
-//   return state
-// }
-
-// 初始化狀態用的函式 - 用陣列中的物件狀態
 const initStateWithObjcet = (products) => {
   const state = []
 
@@ -51,21 +38,7 @@ const initStateWithObjcet = (products) => {
 }
 
 function App() {
-  // 多樣產品狀態：陣列
-  // ex. 三樣商品 -> [1,1,1]
-  // 下面兩種方式均可
-  //const [counts, setCounts] = useState(initState(products))
-  //const [counts, setCounts] = useState(Array(products.length).fill(1))
-
-  // 多樣產品狀態：物件
-  // [{
-  //   id: 4,
-  //   name: '金色 T-shirt',
-  //   category: 'Shirt',
-  //   image: 'https://i.imgur.com/pHQ3xT3.jpg',
-  //   price: 100,
-  //   count:1
-  // }]
+  // const [myProducts, setMyProducts] = useState(products)
   const [productsInOrder, setProductsInOrder] = useState(
     initStateWithObjcet(products)
   )

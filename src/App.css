@@ -1,8 +1,8 @@
-/* #root {
+#root {
   background: #ddd;
   min-height: 100vh;
   vertical-align: middle;
-   display: flex; 
+  display: flex;
   font-family: sans-serif;
   font-size: 1rem;
   font-weight: bold;
@@ -188,13 +188,13 @@ a:hover {
 
 .col-style {
   padding-left: 0;
-} */
+}
 ul {
   list-style: none;
   display: flex;
   justify-content: space-around;
 }
-ul li a{
+ul li a {
   text-decoration: none;
   background-color: #000;
   color: #fff;
@@ -202,12 +202,11 @@ ul li a{
   font-weight: bold;
 }
 
-/* ul li a:hover{
+ul li a:hover {
   background-color: red;
   color: #fff;
-} */
-
-.active{
+}
+.active {
   background-color: rgb(63, 38, 133);
   color: #fff;
 }

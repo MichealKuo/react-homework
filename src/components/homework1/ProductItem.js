@@ -9,7 +9,7 @@ import React, { useState } from 'react'
 //  }
 
 function ProductItem(props) {
-  const { name, category, image, price, count, setCount, products } = props
+  const { name, category, image, price, count, setCount, remove } = props
 
   return (
     <>
@@ -44,7 +44,7 @@ function ProductItem(props) {
             </a>
           </div>
           <div className="col">${price}</div>
-          <button onClick={() => {}}>&#10005;</button>
+          <button onClick={remove}>&#10005;</button>
         </div>
       </div>
     </>

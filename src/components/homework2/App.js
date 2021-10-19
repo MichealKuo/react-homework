@@ -1,50 +1,31 @@
-import React, { useState } from 'react'
-import './App.css'
+import { useState } from 'react'
+import './menu.css'
 
 function App() {
-  const [isActive, setActive] = useState(false)
-  const toggleClass = () => {
-    setActive(true)
-  }
+  // -1代表一開始沒有被按的項目
+  const [activeIndex, setActiveIndex] = useState(-1)
+
+  const menuItems = ['首頁', '關於我們', '產品']
 
   return (
     <>
       <ul>
-        <li>
-          <a
-            href="/"
-            key="1"
-            className={isActive ? 'active' : null}
-            onClick={toggleClass}
-          >
-            首頁
-          </a>
-        </li>
-        <li>
-          <a
-            href="/"
-            key="2"
-            className={isActive ? 'active' : null}
-            onClick={toggleClass}
-          >
-            關於我們
-          </a>
-        </li>
-        <li>
-          <a
-            href="/"
-            key="3"
-            className={isActive ? 'active' : null}
-            onClick={toggleClass}
-          >
-            產品
-          </a>
-        </li>
+        {menuItems.map((v, i) => {
+          return (
+            <li
+              key={i}
+              className={i === activeIndex ? 'active' : ''}
+              onClick={() => {
+                setActiveIndex(i)
+              }}
+            >
+              {v}
+            </li>
+          )
+        })}
       </ul>
     </>
   )
 }
 
 export default App
-
-//
