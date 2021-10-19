@@ -9,9 +9,9 @@ class MyDatepickerComponent extends Component {
   }
 
   handleChange = (date) => {
-    this.setState({
-      startDate: date,
-    })
+    // this.setState({
+    //   startDate: date,
+    // })
     if (new Date().getFullYear() - date.getFullYear() > 18) {
       alert('恭喜成年')
     } else {
